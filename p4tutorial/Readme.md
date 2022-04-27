@@ -11,7 +11,6 @@
 
 ## 1. p4 环境安装
 
-**Last edited time**：4.27 2022
 
 **OS**：ubuntu 20.04.4
 
@@ -321,8 +320,6 @@ apt-get install bridge-utils
 
 ## 2 运行时出现的BUG
 
-> Last maintenance: 4.27 2022
->
 > Under maintenance……
 
 
