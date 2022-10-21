@@ -186,6 +186,7 @@ make
 ```
 
 -----------------------#目前仍不确定是否安装完成
+
 - 可能会出现的问题：
 
   1. 该部分可能出现的问题很多，主要集中在执行`cmake -DCMAKE...`阶段，会出现缺少库的问题
@@ -196,7 +197,7 @@ make
 
      如果仍然找不到该库，百度&google搜ubuntu安装xxx；
 
---  可能需要执行如下命令：
+-  可能需要执行如下命令：
       sudo apt install libpython2-dev
       sudo apt install liblua5.1-0
       sudo apt-get install lua5.1-0-dev
