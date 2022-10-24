@@ -275,13 +275,15 @@ sudo apt-get update
 sudo apt install p4lang-p4c
 ```
 
+```
 安装方法2：
 git clone --recursive https://github.com/p4lang/p4c.git
 mkdir build
 cd build
 cmake .. <optional arguments>
 make -j4
-make -j4 check  （check需要100成功，如果出现问题参考/home/wly/p4c/build/Testing/Temporary/LastTest.log的这个文件）
+make -j4 check  
+（check需要100成功，如果出现问题参考/home/wly/p4c/build/Testing/Temporary/LastTest.log的这个文件）
 ```
 
 可能需要额外执行的命令：
