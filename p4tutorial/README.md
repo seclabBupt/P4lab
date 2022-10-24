@@ -286,14 +286,14 @@ make -j4 check
 （check需要100成功，如果出现问题参考/home/wly/p4c/build/Testing/Temporary/LastTest.log的这个文件）
 ```
 
-可能需要额外执行的命令：
+- 可能需要额外执行的命令：
    sudo apt-get install scapy
    pip install thrift
-	1、若在LastTest.Log中发现   ImportError: cannot import name 'Thrift' from 'thrift' (unknown location) ubuntu  这个错误
+  1.若在LastTest.Log中发现   ImportError: cannot import name 'Thrift' from 'thrift' (unknown location) ubuntu  这个错误
 则卸载thrift（pip uninstall thrift）, 然后重新安装
 
-	2、若在LastTest.Log中发现  /usr/bin/ld: cannot find /home/wly/p4c/backends/ebpf/runtime/usr/lib64/libbpf.a: No such file or directory  这个错误
-则表明需要安装 libbpf，在 p4c 文件夹下运行 python3 backends/ebpf/build_libbpf 。 
+  2.若在LastTest.Log中发现  /usr/bin/ld: cannot find /home/wly/p4c/backends/ebpf/runtime/usr/lib64/libbpf.a: No such file or directory  这个错误
+则表明需要安装 libbpf，在 p4c 文件夹下运行 python3 backends/ebpf/build_libbpf
 
 - 可能出现的问题
   1. `sudo apt-get install -y doxygen graphviz texlive-full` 非常费时间，建议与编译gRPC或者编译prtobuf同时进行
