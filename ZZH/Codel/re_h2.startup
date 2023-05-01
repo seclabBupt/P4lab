@@ -1,0 +1,14 @@
+ip link set eth0 address 00:00:0a:00:01:02
+ip link set eth1 address 00:00:00:00:02:01
+ip link set eth2 address 00:00:00:00:02:02
+
+ip addr add 10.0.5.2/24 dev eth0
+ip addr add 10.0.3.2/24 dev eth1
+ip addr add 10.0.4.2/24 dev eth2
+
+arp -s 10.0.5.1 00:00:00:00:02:21
+arp -s 10.0.3.1 00:00:00:00:03:03
+arp -s 10.0.4.1 00:00:00:00:03:04
+
+route add -net 10.0.1.0/24 dev eth0 gw 10.0.5.1
+route add -net 10.0.2.0/24 dev eth0 gw 10.0.5.1
