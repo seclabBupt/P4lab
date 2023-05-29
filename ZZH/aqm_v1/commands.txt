@@ -1,0 +1,10 @@
+table_add forwarding forward 2 10.0.1.1 => 1 00:00:0a:00:01:01
+table_add forwarding forward 1 10.0.3.1 => 2 00:00:0a:00:01:02
+table_add forwarding forward 2 10.0.2.1 => 1 00:00:0a:00:01:01
+table_add forwarding forward 1 10.0.4.1 => 2 00:00:0a:00:01:02
+mirroring_add 250 4
+
+table_add aqm go_to_drop 2 => 15 4
+
+set_queue_rate 1000 2             
+set_queue_depth 15 2
