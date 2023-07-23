@@ -33,7 +33,7 @@ def clear_all():
 ipv4_lpm = p4.Ingress.ipv4_lpm
 
 ipv4_lpm.add_with_l3_switch(
-    dst_addr=ip_address('192.168.100.10'), dst_addr_p_length=32, port=134, new_mac_da=0x0000c9a059a2)
+    dst_addr=ip_address('192.168.100.10'), dst_addr_p_length=32, port=142, new_mac_da==0x9c69b460d454)
 
 ipv4_lpm.add_with_l3_switch(
     dst_addr=ip_address('192.168.100.20'), dst_addr_p_length=32, port=135, new_mac_da=0x9c69b460d478)
