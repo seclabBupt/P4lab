@@ -36,7 +36,7 @@ ipv4_lpm.add_with_l3_switch(
     dst_addr=ip_address('192.168.100.10'), dst_addr_p_length=32, port=142, new_mac_da==0x9c69b460d454)
 
 ipv4_lpm.add_with_l3_switch(
-    dst_addr=ip_address('192.168.100.20'), dst_addr_p_length=32, port=135, new_mac_da=0x9c69b460d478)
+    dst_addr=ip_address('192.168.100.20'), dst_addr_p_length=32, port=140, new_mac_da=0x9c69b460d478)
 
 ipv4_lpm.set_default_with_drop()
 
