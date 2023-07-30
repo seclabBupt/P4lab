@@ -13,12 +13,12 @@ bf-sde.pm> show
 -----+----+---+----+-------+----+--+--+---+---+---+--------+----------------+----------------+-
 PORT |MAC |D_P|P/PT|SPEED  |FEC |AN|KR|RDY|ADM|OPR|LPBK    |FRAMES RX       |FRAMES TX       |E
 -----+----+---+----+-------+----+--+--+---+---+---+--------+----------------+----------------+-
-1/0  |23/0|132|3/ 4|10G    |NONE|Ds|Au|YES|ENB|UP |  NONE  |               0|               0|
-1/1  |23/1|133|3/ 5|10G    |NONE|Ds|Au|YES|ENB|DWN|  NONE  |               0|               0|
-1/2  |23/2|134|3/ 6|10G    |NONE|Ds|Au|YES|ENB|DWN|  NONE  |               0|               0|
-1/3  |23/3|135|3/ 7|10G    |NONE|Ds|Au|YES|ENB|UP |  NONE  |               0|               0|
-2/0  |22/0|140|3/12|10G    |NONE|Ds|Au|YES|ENB|DWN|  NONE  |               0|               0|
-2/1  |22/1|141|3/13|10G    |NONE|Ds|Au|YES|ENB|DWN|  NONE  |               0|               0|
+1/0  |23/0|132|3/ 4|10G    |NONE|Ds|Au|YES|ENB|DWN|  NONE  |               0|               0|
+1/1  |23/1|133|3/ 5|10G    |NONE|Ds|Au|YES|ENB|UP |  NONE  |               0|               0|
+1/2  |23/2|134|3/ 6|10G    |NONE|Ds|Au|YES|ENB|UP |  NONE  |               0|               0|
+1/3  |23/3|135|3/ 7|10G    |NONE|Ds|Au|YES|ENB|DWN|  NONE  |               0|               0|
+2/0  |22/0|140|3/12|10G    |NONE|Ds|Au|YES|ENB|UP |  NONE  |               0|               0|
+2/1  |22/1|141|3/13|10G    |NONE|Ds|Au|YES|ENB|UP |  NONE  |               0|               0|
 2/2  |22/2|142|3/14|10G    |NONE|Ds|Au|YES|ENB|UP |  NONE  |               0|               0|
 2/3  |22/3|143|3/15|10G    |NONE|Ds|Au|YES|ENB|UP |  NONE  |               3|               0|
 
@@ -51,14 +51,14 @@ Port/channel:2/3  Port Mac addr: f8:8e:a1:ec:f9:bc
 arp
 192.168.100.20           ether   f8:8e:a1:ec:f9:bb   CM                    ens4f0
 
-203.207.106.8 ens7f0连接1/3 135 ens7f1连接1/0 132
-4: ens7f0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+203.207.106.8 ens9f0连接2/0 140 ens9f1连接2/1 141
+4: ens9f0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
     link/ether 9c:69:b4:60:d4:78 brd ff:ff:ff:ff:ff:ff
     altname enp81s0f0
     inet 192.168.100.20/24 scope global ens7f0
        valid_lft forever preferred_lft forever
 arp
-192.168.100.10           ether   f8:8e:a1:ec:f9:b8   CM                    ens7f0
+192.168.100.10           ether   f8:8e:a1:ec:f9:b9   CM                    ens9f0
 ```
 
 - 运行程序
