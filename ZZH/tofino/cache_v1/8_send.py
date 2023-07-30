@@ -14,11 +14,11 @@ def get_if():
     ifs=get_if_list()
     iface=None
     for i in get_if_list():
-        if "ens7f0" in i:
+        if "ens9f0" in i:
             iface=i
             break
     if not iface:
-        print("Cannot find ens7f0 interface")
+        print("Cannot find ens9f0 interface")
         exit(1)
     return iface
 
@@ -41,7 +41,7 @@ def main():
     iface = get_if()
 
     print("sending on interface %s to %s" % (iface, str(addr)))
-    pkt =  Ether(src=get_if_hwaddr(iface),dst = "f8:8e:a1:ec:f9:b8")
+    pkt =  Ether(src=get_if_hwaddr(iface),dst = "f8:8e:a1:ec:f9:b9")
     pkt = pkt /IP(dst=addr, proto=252)
     pkt = pkt /tianchong(cpu=int(sys.argv[2]),mem=int(sys.argv[3]),disk=int(sys.argv[4]),net=int(sys.argv[5]))
     pkt.show2()
