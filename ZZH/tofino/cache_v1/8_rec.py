@@ -14,11 +14,11 @@ def get_if():
     ifs=get_if_list()
     iface=None
     for i in get_if_list():
-        if "ens7f0" in i:
+        if "ens9f0" in i:
             iface=i
             break
     if not iface:
-        print("Cannot find ens7f0 interface")
+        print("Cannot find ens9f0 interface")
         exit(1)
     return iface
 
