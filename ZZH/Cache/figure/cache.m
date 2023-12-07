@@ -19,7 +19,7 @@ cluster3=[4000,10,60,8,8];
 user=[2000,1,10,1];
 manzushu=0;
 junhenglv=[0,0,0,0,0,0,0,0,0];
-tag=1;
+tag=2;
 if tag==0
     for i=1:9
         flag=0;             
@@ -28,6 +28,7 @@ if tag==0
                 cluster1(j)=cluster1(j)-user(j);
                 if cluster1(j)<0
                     cluster1(j)=0;
+                    flag=1;
                 end
             else
                 flag=1;
@@ -134,5 +135,92 @@ if tag==1
         end
     end
 end
+
+if tag==2
+   for i=1:9
+       flag=0;
+       for j=1:4
+           if cluster1(j)>0
+                if cluster1(j)-user(j)<0
+                    flag=1;
+                end
+           else
+                flag=1;
+           end    
+       end
+       if flag==0
+           cluster1(1)=cluster1(1)-user(1);
+           cluster1(2)=cluster1(2)-user(2);
+           cluster1(3)=cluster1(3)-user(3);
+           cluster1(4)=cluster1(4)-user(4);
+           manzushu=manzushu+1;
+           junhenglv(i)=1-(abs((a1-cluster1(1))/a1-(b1-cluster2(1))/b1)+abs((a1-cluster1(1))/a1-(c1-cluster3(1))/c1)+abs((b1-cluster2(1))/b1-(c1-cluster3(1))/c1)+ ...
+                     abs((a2-cluster1(2))/a2-(b2-cluster2(2))/b2)+abs((a2-cluster1(2))/a2-(c2-cluster2(2))/c2)+abs((b2-cluster2(2))/b2-(c2-cluster3(2))/c2)+ ...
+                     abs((a3-cluster1(3))/a3-(b3-cluster2(3))/b3)+abs((a3-cluster1(3))/a3-(c3-cluster3(3))/c3)+abs((b3-cluster2(3))/b3-(c3-cluster3(3))/c3)+ ...
+                     abs((a4-cluster1(4))/a4-(b4-cluster2(4))/b4)+abs((a4-cluster1(4))/a4-(c4-cluster3(4))/c4)+abs((b4-cluster2(4))/b4-(c4-cluster3(4))/c4))/12;
+       end
+       if flag==1
+           flag=2;
+           for j=1:4
+                if cluster2(j)>0
+                    if cluster2(j)-user(j)<0
+                        flag=3;
+                    end
+                else
+                    flag=3;
+                end    
+            end
+       end
+       if flag==2
+           cluster2(1)=cluster2(1)-user(1);
+           cluster2(2)=cluster2(2)-user(2);
+           cluster2(3)=cluster2(3)-user(3);
+           cluster2(4)=cluster2(4)-user(4);
+           manzushu=manzushu+1;
+           junhenglv(i)=1-(abs((a1-cluster1(1))/a1-(b1-cluster2(1))/b1)+abs((a1-cluster1(1))/a1-(c1-cluster3(1))/c1)+abs((b1-cluster2(1))/b1-(c1-cluster3(1))/c1)+ ...
+                     abs((a2-cluster1(2))/a2-(b2-cluster2(2))/b2)+abs((a2-cluster1(2))/a2-(c2-cluster2(2))/c2)+abs((b2-cluster2(2))/b2-(c2-cluster3(2))/c2)+ ...
+                     abs((a3-cluster1(3))/a3-(b3-cluster2(3))/b3)+abs((a3-cluster1(3))/a3-(c3-cluster3(3))/c3)+abs((b3-cluster2(3))/b3-(c3-cluster3(3))/c3)+ ...
+                     abs((a4-cluster1(4))/a4-(b4-cluster2(4))/b4)+abs((a4-cluster1(4))/a4-(c4-cluster3(4))/c4)+abs((b4-cluster2(4))/b4-(c4-cluster3(4))/c4))/12;
+       end
+       if flag==3
+           flag=4;
+           for j=1:4
+                if cluster3(j)>0
+                    if cluster3(j)-user(j)<0
+                        flag=5;
+                    end
+                else
+                    flag=5;
+                end    
+            end
+       end
+       if flag==4
+           cluster3(1)=cluster3(1)-user(1);
+           cluster3(2)=cluster3(2)-user(2);
+           cluster3(3)=cluster3(3)-user(3);
+           cluster3(4)=cluster3(4)-user(4);
+           manzushu=manzushu+1;
+           junhenglv(i)=1-(abs((a1-cluster1(1))/a1-(b1-cluster2(1))/b1)+abs((a1-cluster1(1))/a1-(c1-cluster3(1))/c1)+abs((b1-cluster2(1))/b1-(c1-cluster3(1))/c1)+ ...
+                     abs((a2-cluster1(2))/a2-(b2-cluster2(2))/b2)+abs((a2-cluster1(2))/a2-(c2-cluster2(2))/c2)+abs((b2-cluster2(2))/b2-(c2-cluster3(2))/c2)+ ...
+                     abs((a3-cluster1(3))/a3-(b3-cluster2(3))/b3)+abs((a3-cluster1(3))/a3-(c3-cluster3(3))/c3)+abs((b3-cluster2(3))/b3-(c3-cluster3(3))/c3)+ ...
+                     abs((a4-cluster1(4))/a4-(b4-cluster2(4))/b4)+abs((a4-cluster1(4))/a4-(c4-cluster3(4))/c4)+abs((b4-cluster2(4))/b4-(c4-cluster3(4))/c4))/12;
+       end
+       if flag==5
+           for j=1:4
+                if cluster1(j)>0
+                    cluster1(j)=cluster1(j)-user(j);
+                    if cluster1(j)<0
+                        cluster1(j)=0;
+                    end
+                end
+           end
+           junhenglv(i)=1-(abs((a1-cluster1(1))/a1-(b1-cluster2(1))/b1)+abs((a1-cluster1(1))/a1-(c1-cluster3(1))/c1)+abs((b1-cluster2(1))/b1-(c1-cluster3(1))/c1)+ ...
+                     abs((a2-cluster1(2))/a2-(b2-cluster2(2))/b2)+abs((a2-cluster1(2))/a2-(c2-cluster2(2))/c2)+abs((b2-cluster2(2))/b2-(c2-cluster3(2))/c2)+ ...
+                     abs((a3-cluster1(3))/a3-(b3-cluster2(3))/b3)+abs((a3-cluster1(3))/a3-(c3-cluster3(3))/c3)+abs((b3-cluster2(3))/b3-(c3-cluster3(3))/c3)+ ...
+                     abs((a4-cluster1(4))/a4-(b4-cluster2(4))/b4)+abs((a4-cluster1(4))/a4-(c4-cluster3(4))/c4)+abs((b4-cluster2(4))/b4-(c4-cluster3(4))/c4))/12;
+       end
+   end
+end
+
 disp(manzushu);
 disp(junhenglv);
