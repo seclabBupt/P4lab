@@ -406,7 +406,7 @@ control MyEgress(inout headers hdr,
 
     action go_to_drop(bit<32> C,bit<32> k) {
         port_packet.read(meta.port_sum,(bit<32>)standard_metadata.egress_port);
-        if(10*((bit<32>)standard_metadata.deq_qdepth)>k*C&&(10-k)*C*meta.custom_metadata.count_min>meta.port_sum*(C-(bit<32>)standard_metadata.deq_qdepth)){
+        if(10*((bit<32>)standard_metadata.deq_qdepth)>k*C&&(10-k)*C*meta.custom_metadata.count_min>2*meta.port_sum*(C-(bit<32>)standard_metadata.deq_qdepth)){
             meta.mark_drop = 1;
         }
     }
