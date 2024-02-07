@@ -1,0 +1,4 @@
+table_add forwarding forward 2 192.17.0.0/24 => 1 00:00:00:00:01:01
+table_add forwarding forward 1 192.18.0.0/24 => 2 00:00:00:00:02:01
+table_add forwarding forward 2 193.10.11.0/24 => 1 00:00:00:00:01:01
+table_add forwarding forward 1 193.10.11.0/24 => 2 00:00:00:00:02:01
