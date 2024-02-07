@@ -1,0 +1,11 @@
+ifconfig eth0 up
+ip addr add 193.10.11.2/24 dev eth0
+
+ifconfig eth1 up
+ip addr add 192.18.0.1/24 dev eth1
+
+ip link set eth0 address 00:00:00:00:02:01
+ip link set eth1 address 00:00:00:00:02:02
+
+arp -s 192.18.0.2 00:00:00:02:02:02
+arp -s 193.10.11.1 00:00:00:0a:01:02
