@@ -1,0 +1,13 @@
+ifconfig eth0 up
+ifconfig eth1 up
+
+ip link set eth0 address 00:00:00:0a:01:01
+ip link set eth1 address 00:00:00:0a:01:02
+
+p4c kong.p4
+simple_switch -i 1@eth0 -i 2@eth1 kong.json &
+
+while [[ $(pgrep simple_switch) -eq 0 ]]; do sleep 1; done
+until simple_switch_CLI <<< "help"; do sleep 1; done
+
+simple_switch_CLI <<< $(cat commands.txt)
