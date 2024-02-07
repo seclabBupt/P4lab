@@ -1,0 +1,7 @@
+ifconfig eth0 up
+ip addr add 192.17.0.2/24 dev eth0
+
+ip link set eth0 address 00:00:00:01:01:01
+arp -s 192.17.0.1 00:00:00:00:01:02
+
+route add -net 192.18.0.0/24 dev eth0 gw 192.17.0.1
