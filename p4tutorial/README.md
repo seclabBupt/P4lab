@@ -3,7 +3,7 @@
 相关教程：
 
 - https://github.com/nsg-ethz/p4-learning （主要）
-- https://github.com/p4lang （次要）
+- https://github.com/p4lang （文档等）
 - https://google.com （中文社区质量较低，一般不容易搜到解决方案）
 
 网络技术相关的资源：
