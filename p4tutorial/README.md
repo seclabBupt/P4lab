@@ -27,6 +27,8 @@
 - **FRRouting** ：网络协议栈仿真软件；
 - **P4-Utils**：
 
+**可优先使用安装脚本安装**：`https://github.com/nsg-ethz/p4-utils/blob/master/install-tools/install-p4-dev.sh`
+
 PI、BMv2需要编译安装，有一定的安装难度。
 
 P4C、Mininet、FRRouting支持用包管理器安装，非常容易操作。
