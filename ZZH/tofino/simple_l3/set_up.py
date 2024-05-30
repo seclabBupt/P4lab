@@ -1,6 +1,6 @@
 from ipaddress import ip_address
 
-p4 = bfrt.cache.pipe
+p4 = bfrt.simple_l3.pipe
 
 # Clear All tables
 def clear_all():
